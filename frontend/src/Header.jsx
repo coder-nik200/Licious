@@ -14,14 +14,17 @@ export default function Header() {
   const { user } = useContext(UserContext);
 
   return (
-    <header className="flex items-center justify-between px-6 py-4 shadow-md bg-white">
-      {/* Bigger Logo */}
-      <Link to={"/"} className="flex items-center h-14 w-25">
+    <header className="flex flex-wrap items-center justify-between px-4 py-4 shadow-md bg-white gap-4 md:px-6">
+      {/* Logo */}
+      <Link
+        to="/"
+        className="flex items-center h-12 w-20 md:h-14 md:w-24 mx-auto md:mx-0"
+      >
         <img src={logo} alt="Logo" className="h-full w-full object-contain" />
       </Link>
 
-      {/* Location */}
-      <div className="flex flex-col cursor-pointer">
+      {/* Location – hide on mobile */}
+      <div className="hidden md:flex flex-col cursor-pointer">
         <div className="flex items-center gap-2">
           <img src={location} alt="Location" className="h-4" />
           <span className="font-semibold text-lg">Bangalore</span>
@@ -33,39 +36,39 @@ export default function Header() {
       </div>
 
       {/* Search Bar */}
-      <div className="relative w-full max-w-lg mx-6">
+      <div className="relative w-full order-last md:order-none md:max-w-lg mx-auto">
         <input
           type="text"
-          className="w-full px-5 py-3 pl-12 text-lg border border-gray-300 rounded-full
-                 focus:outline-none focus:ring-2 focus:ring-red-500"
+          className="w-full px-4 py-2 pl-10 text-base md:text-lg border border-gray-300 rounded-full
+          focus:outline-none focus:ring-2 focus:ring-red-500"
           placeholder="Search for any delicious product"
         />
         <IoIosSearch
-          className="absolute left-4 top-1/2 transform -translate-y-1/2 
-                           text-2xl text-gray-600"
+          className="absolute left-3 md:left-4 top-1/2 transform -translate-y-1/2 
+          text-xl md:text-2xl text-gray-600"
         />
       </div>
 
-      {/* Right Menu – Smaller Icons */}
-      <div className="flex items-center gap-6 text-center">
+      {/* Right Menu */}
+      <div className="flex items-center gap-4 md:gap-6 text-center w-full justify-around md:w-auto">
         <div className="flex flex-col items-center cursor-pointer">
-          <img src={category} alt="" className="h-5 w-5" />
-          <span className="text-xs font-medium">Categories</span>
+          <img src={category} alt="" className="h-5 w-5 md:h-6 md:w-6" />
+          <span className="text-[10px] md:text-xs font-medium">Categories</span>
         </div>
 
         <div className="flex flex-col items-center cursor-pointer">
-          <img src={store} alt="" className="h-5 w-5" />
-          <span className="text-xs font-medium">Stores</span>
+          <img src={store} alt="" className="h-5 w-5 md:h-6 md:w-6" />
+          <span className="text-[10px] md:text-xs font-medium">Stores</span>
         </div>
 
         <div className="flex flex-col items-center cursor-pointer">
-          <img src={profile} alt="" className="h-5 w-5" />
-          <span className="text-xs font-medium">Login</span>
+          <img src={profile} alt="" className="h-5 w-5 md:h-6 md:w-6" />
+          <span className="text-[10px] md:text-xs font-medium">Login</span>
         </div>
 
         <div className="flex flex-col items-center cursor-pointer">
-          <img src={cart} alt="" className="h-5 w-5" />
-          <span className="text-xs font-medium">Cart</span>
+          <img src={cart} alt="" className="h-5 w-5 md:h-6 md:w-6" />
+          <span className="text-[10px] md:text-xs font-medium">Cart</span>
         </div>
       </div>
     </header>
