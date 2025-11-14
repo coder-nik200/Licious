@@ -46,7 +46,7 @@ const updateArrows = () => {
   }, []);
 
   return (
-    <section className="py-4 relative lg:px-24 px-4">
+    <section className="my-4 mx-3 py-4 relative max-w-6xl lg:mx-auto">
       {/* Title */}
       <h2 className="text-xl font-semibold">{freshfood.name}</h2>
       <p className="text-gray-600 mb-4">{freshfood.subText}</p>
@@ -55,7 +55,7 @@ const updateArrows = () => {
       {showLeft && (
         <button
           onClick={() => scroll("left")}
-          className="absolute top-1/2 hidden lg:block lg:left-14 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-md z-10"
+          className="absolute top-1/2 hidden lg:block lg:-left-10 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-md z-10"
         >
           <FaArrowLeftLong />
         </button>
@@ -65,7 +65,7 @@ const updateArrows = () => {
       {showRight && (
         <button
           onClick={() => scroll("right")}
-          className="absolute top-1/2 hidden lg:block lg:right-14 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-md z-10"
+          className="absolute top-1/2 hidden lg:block lg:-right-10 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-md z-10"
         >
           <FaArrowRightLong />
         </button>
@@ -87,7 +87,7 @@ const updateArrows = () => {
               className="w-full h-32 sm:h-36 md:h-40 object-cover rounded-2xl"
             />
 
-            <h3 className="font-medium mt-2 text-sm sm:text-base md:text-lg">
+            <h3 className="font-medium mt-2 text-sm sm:text-xl md:text-lg">
               {item.name.length > 30 ? item.name.slice(0, 30) + "..." : item.name}
             </h3>
 

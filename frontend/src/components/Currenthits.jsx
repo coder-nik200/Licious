@@ -47,7 +47,7 @@ const Currenthits = () => {
   }, []);
 
   return (
-    <section className="py-4 relative lg:px-24 px-4">
+    <section className="my-4 mx-2 py-4 relative  max-w-6xl lg:mx-auto">
       {/* Title */}
       <h2 className="text-xl font-semibold">{data.title}</h2>
       <p className="text-gray-600 mb-4">{data.subText}</p>
@@ -56,7 +56,7 @@ const Currenthits = () => {
       {showLeft && (
         <button
           onClick={() => scroll("left")}
-          className="absolute top-1/2 hidden lg:block lg:left-14 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-md z-10"
+          className="absolute top-1/2 hidden lg:block lg:-left-6 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-md z-10"
         >
           <FaArrowLeftLong />
         </button>
@@ -66,7 +66,7 @@ const Currenthits = () => {
       {showRight && (
         <button
           onClick={() => scroll("right")}
-          className="absolute top-1/2 hidden lg:block lg:right-14 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-md z-10"
+          className="absolute top-1/2 hidden lg:block lg:-right-5 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-md z-10"
         >
           <FaArrowRightLong />
         </button>
