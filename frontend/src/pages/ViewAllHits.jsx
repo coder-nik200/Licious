@@ -17,7 +17,7 @@ const ViewAllHits = () => {
         {/* Back Arrow */}
         <button
           onClick={() => navigate(-1)}
-          className="text-2xl font-bold cursor-pointer"
+          className="text-2xl font-bold cursor-pointer md:hidden"
         >
           <FaArrowLeftLong />
         </button>
@@ -26,26 +26,26 @@ const ViewAllHits = () => {
         <h2 className="text-[1.2rem] font-semibold">{data.title}</h2>
 
         {/* Search Icon */}
-        <button className="text-2xl cursor-pointer">
+        <button className="text-2xl cursor-pointer md:hidden">
           <FaSearch />
         </button>
 
       </div>
 
       {/* Product Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
         {products.map((item) => (
           <div
             key={item.variantId}
-            className="bg-white rounded-lg p-3"
+            className="bg-white rounded-b-2xl  shadow-lg"
           >
             {/* Product Image */}
             <img
               src={item.image}
               alt={item.name}
-              className="w-full h-40 object-cover rounded-2xl"
+              className="w-full h-60 object-cover rounded-t-2xl"
             />
-
+          <div className="p-3">
             {/* Product Name */}
             <h3 className="font-medium mt-2 text-sm sm:text-base md:text-base">
               {item.name.length > 48 ? item.name.slice(0, 30) + "..." : item.name}
@@ -71,6 +71,7 @@ const ViewAllHits = () => {
                 ({item.price.discountPercent}% OFF)
               </span>
             </p>
+            </div>
           </div>
         ))}
       </div>

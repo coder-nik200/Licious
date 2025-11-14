@@ -1,12 +1,12 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import freshfood from "../JsonFiles/FreshWaterPams.js";
+import muttonData from "../JsonFiles/muttondata.js";
 import { FaArrowLeftLong } from "react-icons/fa6";
 import { FaSearch } from "react-icons/fa";
 
-const Freshfish = () => {
+const MuttonDetails = () => {
   const navigate = useNavigate();
-  const products = freshfood.products;
+  const products = muttonData.products;
 
   return (
     <section className="w-full py-4 px-4 lg:px-60">
@@ -23,7 +23,7 @@ const Freshfish = () => {
         </button>
 
         {/* Title */}
-        <h2 className="text-[1.2rem] font-semibold">{freshfood.name}</h2>
+        <h2 className="text-[1.2rem] font-semibold">{muttonData.name}</h2>
 
         {/* Search Icon */}
         <button className="text-2xl cursor-pointer md:hidden">
@@ -54,7 +54,9 @@ const Freshfish = () => {
 
               {/* USP / Description */}
               <p className="text-xs sm:text-sm">
-                {item.usp.length > 48 ? item.usp.slice(0, 48) + "..." : item.usp}
+                {item.uspDescription.length > 48
+                  ? item.uspDescription.slice(0, 48) + "..."
+                  : item.uspDescription}
               </p>
 
               {/* Weight | Pieces | Serves */}
@@ -81,4 +83,4 @@ const Freshfish = () => {
   );
 };
 
-export default Freshfish;
+export default MuttonDetails;
